@@ -1,0 +1,130 @@
+let mapleader = " "
+
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set noautoindent
+set smartindent
+set wrap!
+set nowrap
+set number
+set relativenumber
+set scrolloff=4
+set noswapfile
+set clipboard+=unnamedplus
+set ignorecase
+set incsearch
+set signcolumn=yes
+
+set visualbell
+set ideajoin
+set surround
+set commentary
+Plug 'machakann/vim-highlightedyank'
+
+
+nnoremap ; :
+" xnoremap <leader>p "_dP
+" nnoremap <leader>Y "+Y
+" nnoremap <leader>y "+y
+" vnoremap <leader>y "+y
+" nnoremap <leader>d "_d
+" vnoremap <leader>d "_d
+
+" Text operations
+" nnoremap <C-S--> :action EditorDecreaseFontSize<CR>
+" nnoremap <C-S-=> :action EditorIncreaseFontSize<CR>
+" nnoremap <C-S-0> :action ResetFontSize<CR>
+vnoremap < <gv
+vnoremap > >gv
+
+" Disable Q
+nnoremap Q <nop>
+
+" No highlight on Escape
+nnoremap <Esc> :nohlsearch<CR>
+
+" J behaviour (keep cursor)
+nnoremap J mzJ`z
+
+" Move selected lines up/down (visual)
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+" Center after half-page moves
+" nnoremap <C-u> <C-u>zz
+" nnoremap <C-d> <C-d>zz
+
+" Reformat entire buffer (approximation of "=g" -> indent whole file)
+nnoremap =g ggVG=<C-o>zz
+
+" Quick insert blank lines preserving context
+" nnoremap <leader>o o<CR><Esc>O
+" nnoremap <leader>O O<Esc>O
+
+" Append semicolon + move (approximation)
+nnoremap <leader>af <Esc>$a;<Esc><C-o>
+
+" Make current file executable
+" nnoremap <leader>xc :!chmod +x %<CR>
+
+" Delete word then go back (db mapping replacement)
+nnoremap db vb"_d
+
+" File tree maneuvering
+nnoremap <leader>ne :action NewElement<CR>
+nnoremap <leader>nc :action NewClass<CR>
+nnoremap <leader>nm :action NewModule<CR>
+" nnoremap <leader>um :action UnloadModule<CR>
+
+" Tab navigation &  Window navigation (approximations)
+nnoremap <C-h> :action PreviousTab<CR>
+nnoremap <C-j> :action NextSplitter<CR>
+nnoremap <C-k> :action PrevSplitter<CR>
+nnoremap <C-l> :action NextTab<CR>
+" nnoremap <C-h> :action NextSplitter<CR>
+" nnoremap <C-l> :action PrevSplitter<CR>
+
+" " Window nav with Ctrl-h/j/k/l (works in IdeaVim if IDE supports it)
+" nnoremap <C-h> <C-w><C-h>
+" nnoremap <C-l> <C-w><C-l>
+" nnoremap <C-j> <C-w><C-j>
+" nnoremap <C-k> <C-w><C-k>
+
+" Documentation - useless/baked into it.
+" inoremap <silent> <S-K> <C-q>
+nnoremap <silent> K :action QuickJavaDoc<CR>
+
+" Navigation
+" nnoremap grc :action GotoClass<CR>
+" nnoremap gri :action GotoImplementation<CR>
+" nnoremap grd :action GotoDeclaration<CR>
+" nnoremap grp :action GotoSuperMethod<CR>
+" nnoremap grt :action GotoTest<CR>
+
+" Run configurations
+nnoremap ,r :action ContextRun<CR>
+nnoremap ,f :action ChooseRunConfiguration<CR>
+
+" UI modes
+" nnoremap <leader>z :action ToggleDistractionFreeMode<CR>
+" nnoremap <leader>z :action TogglePresentationMode<CR>
+" nnoremap <C-z> :action ToggleZenMode<CR>
+
+" Tab management (IdeaVim may map <Cmd> to :tab commands or IDE handles them)
+" nnoremap <leader>tn :tabnext<CR>
+" nnoremap <leader>tp :tabprevious<CR>
+" nnoremap <leader>tx :tabclose<CR>
+
+" File quick-edit shortcuts (open files in editor; IDE handles path resolution)
+" nnoremap <leader>sn :e ~/.config/nvim/init.lua<CR>
+" nnoremap <leader>si :e ~/.config/<CR>
+" nnoremap <leader>sb :e ~/.local/bin/<CR>
+
+" Save / source / quit
+" nnoremap <leader>so :update<CR>:source $HOME/.ideavimrc<CR>
+" nnoremap <leader>w :write<CR>
+" nnoremap <leader>q :quit<CR>
+
+" Formatting
+nnoremap <leader>f :action ReformatCode<CR>
