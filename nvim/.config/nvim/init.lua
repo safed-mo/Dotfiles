@@ -1,5 +1,6 @@
 require("autocommands.highlight-on-yank")
-require("autocommands.markdown-options")
+-- require("autocommands.markdown-options")
+require("autocommands.init")
 require("core.colorschemes")
 require("core.keymaps")
 require("core.lsp")

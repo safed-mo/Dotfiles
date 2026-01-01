@@ -35,6 +35,7 @@ return {
 		-- Install formatters, and linters
 		require("mason-tool-installer").setup({
 			ensure_installed = {
+
 				"bashls",
 				"cssls",
 				"eslint",
@@ -49,6 +50,26 @@ return {
 				"tailwindcss",
 				"taplo",
 				"yamlls",
+                "alejandra",
+                "biome",
+                -- "google-java-format",
+                -- "jdtls",
+                "kdlfmt",
+                "marksman",
+                -- "vscode-spring-boot-tools",
+                "yaml-language-server",
+
+
+                -- Java LSP
+				"vscode-spring-boot-tools",
+				"jdtls",
+				-- "java-language-server",
+				"google-java-format",
+
+                -- Nix language servers
+                "alejandra",
+                "nil",
+
 				-- "basedpyright",
 				-- "black", -- Python formatter
 				-- "css_variables",
@@ -61,6 +82,7 @@ return {
 				-- "pylint", -- Python linter
 				-- "rust_analyzer",
 				-- "ts_ls",
+
 			},
 		})
 	end,

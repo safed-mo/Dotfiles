@@ -58,7 +58,7 @@ set -o vi
 force_color_prompt=yes
 color_prompt=yes
 PS1='\[\e[32m\]\u@\h \[\e[34m\]\w\[\e[0m\] \$ '
- 
+
 # Key bindings
 bind 'TAB:menu-complete'             # cycle forward
 bind '"\e[Z":menu-complete-backward' # cycle backward
@@ -149,7 +149,7 @@ alias yrns='yay -Rns'
 # alias yss='paru -Ss'
 # alias yrns='paru -Rns'
 
-# Yt-dlp 
+# Yt-dlp
 alias yt-audio-high='yt-dlp -f "bestaudio[ext=m4a]" '
 alias yt-video-high=' yt-dlp -f "bestvideo[height<=1080]+bestaudio/best[height<=1080]"  '
 alias yt-video-low='yt-dlp -f "worstvideo+bestaudio" '
