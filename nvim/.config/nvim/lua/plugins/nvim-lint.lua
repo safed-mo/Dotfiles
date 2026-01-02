@@ -18,7 +18,7 @@ return {
 			-- dockerfile = { "hadolint" },
 			-- terraform = { "tflint" },
 			-- go = { "golangcilint" },
-			-- lua = { "luacheck" },
+			lua = { "luacheck" },
 			sh = { "shellcheck" },
 			bash = { "shellcheck" },
 			zsh = { "shellcheck" },
