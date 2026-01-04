@@ -33,7 +33,7 @@ Each directory corresponds to a set of configs (e.g. `nvim`, `zsh`, etc.).
 
 Extras
 ```bash
-sudo pacman -S 
+sudo pacman -S
 
 alacritty
 amd-ucode
@@ -47,7 +47,8 @@ git
 gnome-keyring
 gnu-free-fonts
 luarocks
-nemo
+polkit-gnome
+nautilus
 neovim
 nodejs
 noto-fonts
@@ -61,8 +62,8 @@ rofi
 trash-cli
 ttc-iosevka
 ttf-font-awesome
-ttf-iosevka-nerd 
-ttf-iosevkaterm-nerd 
+ttf-iosevka-nerd
+ttf-iosevkaterm-nerd
 ttf-jetbrains-mono
 ttf-jetbrains-mono-nerd
 ttf-liberation
@@ -103,7 +104,7 @@ intellij-idea-ultimate-edition
 brave-bin
 boomer-git
 noto-fonts-variable-ar
-greenclip 
+greenclip
 
 ```
 

@@ -1,7 +1,17 @@
+## AUR
+boomer-git
+brave-bin
+greenclip
+intellij-idea-ultimate-edition
+noto-fonts-variable-ar
+
+
+## Pacman
 7zip
 alacritty
 amd-ucode
 bash-completion
+brightnessctl
 btop
 cliphist
 discord
@@ -13,12 +23,14 @@ fzf
 gimp
 git
 gnome-keyring
+gnu-free-fonts
 google-java-format
 hyprlock
 jdk-openjdk
 lazygit
 libnotify
 luarocks
+nautilus
 neovim
 nodejs
 noto-fonts
@@ -29,6 +41,7 @@ noto-fonts-sc
 npm
 obs-studio
 obsidian
+openssh
 polkit-gnome
 qt5ct
 qt6-wayland
@@ -50,10 +63,12 @@ ttf-jetbrains-mono
 ttf-jetbrains-mono-nerd
 ttf-liberation
 unzip
+wl-clipboard
 xclip
 xdg-desktop-portal
-xdg-desktop-portal-gtk
 xdg-desktop-portal-gnome
+xdg-desktop-portal-gtk
+xorg-xset
 xorg-xwayland
 xwayland-satellite
 yazi
