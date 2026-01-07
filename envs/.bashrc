@@ -11,10 +11,11 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 
 ### Shell Behavior
-shopt -s autocd     # type dir name to cd
-shopt -s nocaseglob # case-insensitive file globbing
+shopt -s autocd
+shopt -s nocaseglob
 
-case $- in *i*) ;; *) return ;; esac # only interactive shell
+# only interactive shell
+case $- in *i*) ;; *) return ;; esac
 
 # History
 HISTCONTROL=ignoreboth:erasedups
@@ -30,9 +31,10 @@ if [[ ! -v BASH_COMPLETION_VERSINFO && -f /usr/share/bash-completion/bash_comple
     source /usr/share/bash-completion/bash_completion
 fi
 
+# vim mode
 set -o vi
 
-# # Prompt
+# Prompt
 force_color_prompt=yes
 color_prompt=yes
 # PS1='\[\e[32m\]\u@\h \[\e[34m\]\w\[\e[0m\] \$ '

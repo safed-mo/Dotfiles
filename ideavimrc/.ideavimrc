@@ -1,48 +1,78 @@
+""" Map leader to space ---------------------
 let mapleader = " "
 
+""" Common settings -------------------------
+set showmode
+set scrolloff=5
+set incsearch
+set number
+set rnu
 set tabstop=4
 set shiftwidth=4
-set expandtab
-set noautoindent
-set smartindent
-set wrap!
-set nowrap
-set number
-set relativenumber
-set scrolloff=4
-set noswapfile
+
 set clipboard+=unnamedplus
+set cursorline
+set expandtab
 set ignorecase
 set incsearch
+" set matchpairs
+set noautoindent
+set noswapfile
+set nowrap
 set signcolumn=yes
-
+set smartcase
+set smartindent
+set splitbelow
+set splitright
+set timeoutlen=300
 set visualbell
-set ideajoin
-set surround
-set commentary
+" set whichwrap
+
+""" Plugins  --------------------------------
 Plug 'machakann/vim-highlightedyank'
+Plug 'easymotion/vim-easymotion'
+Plug 'junegunn/vim-easy-align'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'preservim/nerdtree'
+Plug 'psliwka/vim-smoothie'
+" set surround
+" set ideaput
+" set highlightedyank
+" set commentary
+set multiple-cursors
+set commentary
+set argtextobj
+set easymotion
+set textobj-entire
+set ReplaceWithRegister
+
+""" Plugin settings -------------------------
+" let g:argtextobj_pairs="[:],(:),<:>"
+
+""" Idea specific settings ------------------
+set ideajoin
+set ideastatusicon=gray
+set idearefactormode=keep
 
 
-nnoremap ; :
-" xnoremap <leader>p "_dP
-" nnoremap <leader>Y "+Y
-" nnoremap <leader>y "+y
-" vnoremap <leader>y "+y
-" nnoremap <leader>d "_d
-" vnoremap <leader>d "_d
+""" Mappings --------------------------------
+map <C-j> <Plug>(easymotion-s)
+map <C-k> <Plug>(easymotion-f)
 
-" Text operations
-" nnoremap <C-S--> :action EditorDecreaseFontSize<CR>
-" nnoremap <C-S-=> :action EditorIncreaseFontSize<CR>
-" nnoremap <C-S-0> :action ResetFontSize<CR>
+" No highlight on Escape
+nnoremap <Esc> :nohlsearch<CR>
+
+" nnoremap ; : " sucks
+nnoremap <leader>w :write<CR>
+nnoremap <leader>q :quit<CR>
+
+" better visual mode
 vnoremap < <gv
 vnoremap > >gv
 
 " Disable Q
 nnoremap Q <nop>
-
-" No highlight on Escape
-nnoremap <Esc> :nohlsearch<CR>
 
 " J behaviour (keep cursor)
 nnoremap J mzJ`z
@@ -52,79 +82,71 @@ vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
 " Center after half-page moves
-" nnoremap <C-u> <C-u>zz
-" nnoremap <C-d> <C-d>zz
-
-" Reformat entire buffer (approximation of "=g" -> indent whole file)
-nnoremap =g ggVG=<C-o>zz
-
-" Quick insert blank lines preserving context
-" nnoremap <leader>o o<CR><Esc>O
-" nnoremap <leader>O O<Esc>O
-
-" Append semicolon + move (approximation)
-nnoremap <leader>af <Esc>$a;<Esc><C-o>
-
-" Make current file executable
-" nnoremap <leader>xc :!chmod +x %<CR>
+nnoremap <C-u> <C-u>zz
+nnoremap <C-d> <C-d>zz
 
 " Delete word then go back (db mapping replacement)
 nnoremap db vb"_d
+
+" Vim like comments
+nnoremap gcip vip:action CommentByLineComment<CR>
+nnoremap gcap vap:action CommentByLineComment<CR>
+nnoremap gcc :action CommentByLineComment<CR>
+vnoremap gc :action CommentByLineComment<CR>
 
 " File tree maneuvering
 nnoremap <leader>ne :action NewElement<CR>
 nnoremap <leader>nc :action NewClass<CR>
 nnoremap <leader>nm :action NewModule<CR>
-" nnoremap <leader>um :action UnloadModule<CR>
 
-" Tab navigation &  Window navigation (approximations)
-nnoremap <C-h> :action PreviousTab<CR>
-nnoremap <C-j> :action NextSplitter<CR>
-nnoremap <C-k> :action PrevSplitter<CR>
-nnoremap <C-l> :action NextTab<CR>
-" nnoremap <C-h> :action NextSplitter<CR>
-" nnoremap <C-l> :action PrevSplitter<CR>
+" more better
+nnoremap <C-n> <plug>NextWholeOccurrence<CR>
+nnoremap <C-p> <plug>PreviousWholeOccurrence<CR>
 
-" " Window nav with Ctrl-h/j/k/l (works in IdeaVim if IDE supports it)
-" nnoremap <C-h> <C-w><C-h>
-" nnoremap <C-l> <C-w><C-l>
-" nnoremap <C-j> <C-w><C-j>
-" nnoremap <C-k> <C-w><C-k>
+" Tab navigation
+nnoremap <S-h> :action PreviousTab<CR>
+nnoremap <S-l> :action NextTab<CR>
 
-" Documentation - useless/baked into it.
-" inoremap <silent> <S-K> <C-q>
-nnoremap <silent> K :action QuickJavaDoc<CR>
+" Window navigation (approximations)
+nnoremap <A-h> :action PrevSplitter<CR>
+nnoremap <A-l> :action NextSplitter<CR>
+
+" hover : quick-java documentation
+" nnoremap <silent> K :action QuickJavaDoc<CR>
+nnoremap <silent> K :action ShowHoverInfo<CR>
+nnoremap <silent> gD :action QuickImplementations<CR>
 
 " Navigation
-" nnoremap grc :action GotoClass<CR>
-" nnoremap gri :action GotoImplementation<CR>
-" nnoremap grd :action GotoDeclaration<CR>
-" nnoremap grp :action GotoSuperMethod<CR>
-" nnoremap grt :action GotoTest<CR>
+nnoremap gr :action RenameElement<CR>
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gp :action GotoSuperMethod<CR>
+nnoremap gt :action GotoTest<CR>
+nnoremap <leader>gc :action GotoClass<CR>
+
+" Diagnostics
+nnoremap ]d :action GotoNextError<CR>
+nnoremap [d :action GotoPreviousError<CR>
+
 
 " Run configurations
 nnoremap ,r :action ContextRun<CR>
 nnoremap ,f :action ChooseRunConfiguration<CR>
 
-" UI modes
-" nnoremap <leader>z :action ToggleDistractionFreeMode<CR>
-" nnoremap <leader>z :action TogglePresentationMode<CR>
-" nnoremap <C-z> :action ToggleZenMode<CR>
-
-" Tab management (IdeaVim may map <Cmd> to :tab commands or IDE handles them)
-" nnoremap <leader>tn :tabnext<CR>
-" nnoremap <leader>tp :tabprevious<CR>
-" nnoremap <leader>tx :tabclose<CR>
-
-" File quick-edit shortcuts (open files in editor; IDE handles path resolution)
-" nnoremap <leader>sn :e ~/.config/nvim/init.lua<CR>
-" nnoremap <leader>si :e ~/.config/<CR>
-" nnoremap <leader>sb :e ~/.local/bin/<CR>
-
-" Save / source / quit
-" nnoremap <leader>so :update<CR>:source $HOME/.ideavimrc<CR>
-" nnoremap <leader>w :write<CR>
-" nnoremap <leader>q :quit<CR>
-
 " Formatting
-nnoremap <leader>f :action ReformatCode<CR>
+nnoremap <leader>lf :action ReformatCode<CR>
+
+" Telescope jugad
+nnoremap <leader>fw :action SearchEverywhere<CR>
+nnoremap <leader>ff :action GotoFile<CR>
+
+
+" Terminal
+nnoremap <C-\> :action ActivateTerminalToolWindow<CR>
+
+" IDE explorer
+nnoremap <leader>E :action ActivateProjectToolWindow
+
+" Extras
+nnoremap <leader>tw :set wrap!<CR>
+

@@ -15,7 +15,7 @@ Keymap({ desc = "Hide highlights" }, "n", "<ESC>", ":nohl<CR>")
 Keymap({ desc = "Close buffer" }, "n", "<leader>q", ":q<CR>")
 Keymap({ desc = "Close buffer" }, "n", "<leader>w", ":w<CR>")
 Keymap({ desc = "Quit all" }, "n", "<leader>x", "<cmd>wqa<CR>") -- Quit all
-Keymap({ desc = "Toggle last open buffer" }, "n", "<Tab>", "<C-^>") -- Last open buffer
+-- Keymap({ desc = "Toggle last open buffer" }, "n", "<Tab>", "<C-^>") -- Last open buffer -- used by harpoon
 
 -- Text
 Keymap({ desc = "Text wrap" }, "n", "<leader>tw", ":lua vim.wo.wrap = not vim.wo.wrap<CR>")

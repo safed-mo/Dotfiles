@@ -1,93 +1,97 @@
 return {
-	"williamboman/mason.nvim",
-	-- Automatically install LSPs and related tools
-	-- NOTE: opts = {} is the same as calling require("mason").setup({})
-	dependencies = {
-		"WhoIsSethDaniel/mason-tool-installer.nvim",
-		"mason-org/mason-lspconfig.nvim",
+    "williamboman/mason.nvim",
+    -- Automatically install LSPs and related tools
+    -- NOTE: opts = {} is the same as calling require("mason").setup({})
+    dependencies = {
+        "WhoIsSethDaniel/mason-tool-installer.nvim",
+        "mason-org/mason-lspconfig.nvim",
 
-		-- Useful status updates for LSP
-		{ "j-hui/fidget.nvim", opts = {} },
+        -- Useful status updates for LSP
+        { "j-hui/fidget.nvim", opts = {} },
 
-		-- Extra capabilities (cmp/blink)
-		"saghen/blink.cmp",
-	},
-	config = function()
-		-- Enable mason
-		require("mason").setup({
-			ui = {
-				border = "rounded",
-			},
-		})
+        -- Extra capabilities (cmp/blink)
+        "saghen/blink.cmp",
+    },
+    config = function()
+        -- Enable mason
+        require("mason").setup {
+            ui = {
+                border = "rounded",
+            },
+        }
 
-		-- require("mason-lspconfig").setup()
+        -- require("mason-lspconfig").setup()
 
-		--  Enable the following language servers
-		--  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
-		--
-		--  Add any additional override configuration in the following tables. Available keys are:
-		--  - cmd (table): Override the default command used to start the server
-		--  - filetypes (table): Override the default list of associated filetypes for the server
-		--  - capabilities (table): Override the fields in capabilities. Can be used to disable certain LSP
-		--  - settings (table): Override the default settings passed when initializing the server.
-		--  	  For example, to see the options for `lua_ls`, you could go to: https://luals.github.com
+        --  Enable the following language servers
+        --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
+        --
+        --  Add any additional override configuration in the following tables. Available keys are:
+        --  - cmd (table): Override the default command used to start the server
+        --  - filetypes (table): Override the default list of associated filetypes for the server
+        --  - capabilities (table): Override the fields in capabilities. Can be used to disable certain LSP
+        --  - settings (table): Override the default settings passed when initializing the server.
+        --  	  For example, to see the options for `lua_ls`, you could go to: https://luals.github.com
 
-		-- Install formatters, and linters
-		require("mason-tool-installer").setup({
-			ensure_installed = {
-				-- Bash
-				"bash-language-server",
-				"shellcheck",
-				"shfmt",
+        -- Install formatters, and linters
+        require("mason-tool-installer").setup {
+            ensure_installed = {
 
-				-- Web
-				"css-lsp",
-				"eslint-lsp",
-				"html-lsp",
+                -- avoids errors on fresh installations
+                "luacheck",
+
+                -- Bash
+                "bash-language-server",
+                "shellcheck",
+                "shfmt",
+
+                -- Web
+                "css-lsp",
+                "eslint-lsp",
+                "html-lsp",
                 "prettier",
-				"typescript-language-server",
+                "typescript-language-server",
 
-				-- Java
-				"jdtls",
-				"google-java-format",
-				"vscode-spring-boot-tools",
+                -- Java
+                "jdtls",
+                "google-java-format",
+                "vscode-spring-boot-tools",
 
-				-- Lua
-				"lua-language-server",
-				"stylua",
+                -- Lua
+                "lua-language-server",
+                "stylua",
 
-				-- -- Nix
-				-- "nil",
-				-- "alejandra",
+                -- -- Nix
+                -- "nil",
+                -- "alejandra",
 
-				-- Markdown
-				"marksman",
+                -- Markdown
+                "marksman",
 
-				-- XML
-				"lemminx",
+                -- XML
+                "lemminx",
 
-				-- TOML
-				"taplo",
+                -- TOML
+                "taplo",
 
-				-- YAML
-				"yaml-language-server",
+                -- YAML
+                "yaml-language-server",
 
-				-- JSON
-				"json-lsp",
+                -- JSON
+                "json-lsp",
 
-				-- KDL
-				"kdlfmt",
+                -- KDL
+                "kdlfmt",
 
-				-- QML
-				"qmlls"
+                -- QML
+                "qmlls",
 
-				-- ----------------------------------
-				-- Optional / commented
-				-- "gopls",
-				-- "rust-analyzer",
-				-- "basedpyright",
-				-- "dockerfile-language-server",
-			},
-		})
-	end,
+                -- ----------------------------------
+                -- Optional / commented
+                -- "gopls",
+                -- "rust-analyzer",
+                -- "basedpyright",
+                -- "dockerfile-language-server",
+            },
+        }
+    end,
 }

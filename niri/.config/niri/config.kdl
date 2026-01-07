@@ -388,22 +388,22 @@ window-rule {
 // }
 
 window-rule {
+    match app-id=r#"jetbrains-idea"#
+    open-maximized true
+}
+
+window-rule {
 	match title="Discord"
+	match title="Brave"
 	// open-on-workspace "a"
 	open-maximized true
 }
 
 window-rule {
-	match title="Brave"
-	// open-on-workspace "b"
-	open-maximized true
+	match title="Bitwarden"
+	open-maximized false
+	clip-to-geometry true
 }
-
-// window-rule {
-// 	match title="Alacritty"
-// 	open-on-workspace "b"
-// 	open-maximized true
-// }
 
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
@@ -476,9 +476,11 @@ binds {
 	Mod+Q repeat=false { close-window; }
 
 	Mod+Left  { focus-column-left; }
-	Mod+Down  { focus-window-down; }
-	Mod+Up    { focus-window-up; }
-	Mod+Right { focus-column-right; }
+	Mod+Right     { focus-column-right; }
+	Mod+Up     { focus-workspace-up; }
+	Mod+Down  { focus-workspace-down; }
+	// Mod+Up    { focus-window-up; }
+	// Mod+Right { focus-column-right; }
 
 	Mod+H     { focus-column-left; }
 	Mod+J     { focus-window-down; }

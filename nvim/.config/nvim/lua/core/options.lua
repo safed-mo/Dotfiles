@@ -15,6 +15,7 @@ local options = {
     relativenumber = true,
     ruler = false,
     scrolloff = 8,
+    sidescroll = 10,
     showmode = false,
     signcolumn = "yes",
     smartcase = true,

@@ -1,6 +1,5 @@
-brave-bin
+# AUR packages which i use
+
 intellij-idea-ultimate-edition
-nvidia-550xx-dkms
-nvidia-550xx-utils
-paru
-paru-debug
+brave-bin
+noto-fonts-variable-ar
