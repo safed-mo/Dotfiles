@@ -1,10 +1,7 @@
-
-# dotfiles
-# stow <dir-name>
-```
-
-To remove symlinks:
 ```bash
-stow -D nvim
-```
+git clone https://github.com/safed-mo/Dotfiles.git
 
+rm -rf ~/.bashrc ~/.config/niri 
+
+~/Dotfiles/./stow-all.sh
+```
