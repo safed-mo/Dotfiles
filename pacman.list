@@ -18,13 +18,14 @@ dmenu
 eza
 fakeroot
 fastfetch
-firefox
 gimp
 grub
 gtk-layer-shell
 hyprlock
+imagemagick
 jdk-openjdk
 launchy
+lazygit
 libva-nvidia-driver
 linux-lts
 luacheck
@@ -85,4 +86,5 @@ xorg-xinit
 xorg-xset
 xwayland-satellite
 yazi
+yt-dlp
 zram-generator

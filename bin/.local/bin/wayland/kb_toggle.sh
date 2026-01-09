@@ -11,7 +11,7 @@ if [ -f "$HYPRLAND_COLEMAK" ] && cmp -s "$HYPRLAND_CONF" "$HYPRLAND_COLEMAK"; th
     cp "$HYPRLAND_QWERTY" "$HYPRLAND_CONF"
     echo "Switched to QWERTY configuration."
 elif [ -f "$HYPRLAND_QWERTY" ] && cmp -s "$HYPRLAND_CONF" "$HYPRLAND_QWERTY"; then
-    # If current is QWERTY, switch toColemak 
+    # If current is QWERTY, switch toColemak
     cp "$HYPRLAND_COLEMAK" "$HYPRLAND_CONF"
     echo "Switched to Colemak configuration."
 else
@@ -20,4 +20,3 @@ fi
 
 # Reload Hyprland configuration
 hyprctl reload
-

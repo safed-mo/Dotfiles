@@ -83,6 +83,24 @@ input {
 	mod-key-nested "alt"
 }
 
+gestures {
+	hot-corners {
+		// off
+		// top-left
+		// top-right
+		// bottom-left
+		bottom-right
+	}
+}
+
+cursor {
+	// xcursor-theme "breeze_cursors"
+    xcursor-size 18
+	hide-when-typing
+	hide-after-inactive-ms 1000
+}
+
+
 // You can configure outputs by their name, which you can find
 // by running `niri msg outputs` while inside a niri instance.
 // The built-in laptop monitor is usually called "eDP-1".
@@ -299,9 +317,11 @@ spawn-sh-at-startup "qs" // replaced dunst & waybar
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
 
 environment {
+
 	ELECTRON_OZONE_PLATFORM_HINT "auto"
 	DISPLAY ":0"
 	GDK_BACKEND "wayland,x11,*"
+
 	QT_QPA_PLATFORM "wayland;xcb"
 	QT_QPA_PLATFORMTHEME "qt5ct"
 	QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
@@ -309,6 +329,20 @@ environment {
 	XDG_CURRENT_DESKTOP "niri"
 	XDG_SESSION_TYPE "wayland"
 	XDG_SESSION_DESKTOP "niri"
+
+}
+
+overview {
+    zoom 0.5
+    backdrop-color "#262626"
+
+    workspace-shadow {
+        // off
+        softness 40
+        spread 10
+        offset x=0 y=10
+        color "#00000050"
+    }
 }
 
 hotkey-overlay {
@@ -341,7 +375,11 @@ animations {
 	// off
 
 	// Slow down all animations by this factor. Values below 1 speed them up instead.
-	// slowdown 3.0
+	// slowdown 0.95
+	// window-open {
+	// 	duration-ms 50
+	// 	curve "ease-out-expo"
+	// }
 }
 
 // Window rules let you adjust behavior for individual windows.

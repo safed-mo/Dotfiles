@@ -21,6 +21,9 @@ return {
                 -- QML
                 qml = { "qmlls" },
 
+                -- Java
+                java = { "jdtls" },
+
                 -- Lua
                 lua = { "stylua" },
 
