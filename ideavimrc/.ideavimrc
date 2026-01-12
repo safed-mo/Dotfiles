@@ -114,7 +114,7 @@ nnoremap <A-l> :action NextSplitter<CR>
 " hover : quick-java documentation
 " nnoremap <silent> K :action QuickJavaDoc<CR>
 " nnoremap <silent> gD :action QuickImplementations<CR>
-nnoremap <silent> K :action ShowHoverInfo<CR> " this one works
+nnoremap <silent> K :action ShowHoverInfo<CR>
 
 " Navigation
 nnoremap gr :action RenameElement<CR>

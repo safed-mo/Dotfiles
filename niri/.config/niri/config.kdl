@@ -306,7 +306,7 @@ layout {
 spawn-sh-at-startup "wl-paste --watch cliphist store"
 spawn-sh-at-startup "wl-clip-persist --clipboard regular"
 spawn-sh-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-spawn-sh-at-startup "swaybg -i $HOME/Pictures/walls/beach.jpg"
+spawn-sh-at-startup "swaybg -i $HOME/Pictures/walls/pexels-jungle.jpg"
 spawn-sh-at-startup "xwayland-satellite"
 // spawn-sh-at-startup "dunst"
 // spawn-sh-at-startup "waybar"
@@ -411,8 +411,10 @@ window-rule {
 window-rule {
 	match app-id=r#"^org\.keepassxc\.KeePassXC$"#
 	match app-id=r#"^org\.gnome\.World\.Secrets$"#
+    match app-id="com.bitwarden.desktop"
 
 	block-out-from "screen-capture"
+    // open-on-workspace "private"
 
 	// Use this instead if you want them visible on third-party screenshot tools.
 	// block-out-from "screencast"
